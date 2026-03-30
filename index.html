@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEB Class 12 Exam Routine 2083</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>NEB Class 12 Exam Routine 2083 — Downloadable</title>
 <style>
   :root {
     --bg: #0a0e1a;
@@ -15,6 +15,7 @@
     --text: #e2e8f0;
     --muted: #64748b;
     --row-hover: #1a2540;
+    --success: #10b981;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -114,7 +115,7 @@
     gap: 16px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
     animation: fadeUp 0.8s 0.2s ease both;
   }
 
@@ -125,6 +126,7 @@
     padding: 18px 28px;
     text-align: center;
     min-width: 130px;
+    transition: all 0.2s;
   }
 
   .stat-value {
@@ -141,6 +143,134 @@
     color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+  }
+
+  /* Download stat (special interactive) */
+  .download-stat {
+    cursor: pointer;
+    background: linear-gradient(145deg, rgba(59,130,246,0.12), rgba(17,24,39,0.9));
+    border-color: rgba(59,130,246,0.5);
+    transition: all 0.2s ease;
+  }
+  .download-stat:hover {
+    background: rgba(59,130,246,0.2);
+    transform: translateY(-3px);
+    border-color: var(--accent2);
+    box-shadow: 0 10px 18px -8px rgba(59,130,246,0.3);
+  }
+  .download-stat:active {
+    transform: translateY(1px);
+  }
+  .download-icon {
+    font-size: 1.7rem;
+    margin-bottom: 6px;
+  }
+
+  /* COUNTDOWN CARD */
+  .countdown-card {
+    background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(17, 24, 39, 0.98));
+    border: 1px solid rgba(59,130,246,0.35);
+    border-radius: 24px;
+    margin-bottom: 32px;
+    backdrop-filter: blur(2px);
+    animation: fadeUp 0.8s 0.28s ease both;
+    box-shadow: 0 12px 35px -15px rgba(0,0,0,0.5), 0 0 0 1px rgba(59,130,246,0.1);
+  }
+
+  .countdown-inner {
+    padding: 22px 28px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .countdown-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .countdown-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245,158,11,0.12);
+    border: 1px solid rgba(245,158,11,0.3);
+    padding: 5px 12px;
+    border-radius: 100px;
+    width: fit-content;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .next-subject {
+    font-size: 1.55rem;
+    font-weight: 700;
+    background: linear-gradient(115deg, #fff, #93c5fd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.2;
+  }
+
+  .next-date {
+    font-size: 0.9rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .next-date strong {
+    color: var(--accent2);
+    font-weight: 500;
+  }
+
+  .timer-box {
+    background: #0a0f1c;
+    border-radius: 32px;
+    padding: 12px 24px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    text-align: center;
+    min-width: 240px;
+  }
+
+  .timer-digits {
+    font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: var(--gold);
+    background: linear-gradient(145deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 8px rgba(245,158,11,0.2);
+  }
+
+  .timer-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-top: 6px;
+  }
+
+  .timezone-note {
+    font-size: 10px;
+    color: #475569;
+    text-align: right;
+    border-top: 1px solid rgba(59,130,246,0.2);
+    padding: 8px 28px 12px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 0 0 24px 24px;
   }
 
   /* Table card */
@@ -269,7 +399,6 @@
     align-items: center;
   }
 
-  /* Time info */
   .time-bar {
     border-top: 1px solid var(--border);
     padding: 20px 36px;
@@ -291,7 +420,6 @@
     font-weight: 400;
   }
 
-  /* Footer note */
   .note {
     margin-top: 32px;
     background: rgba(59,130,246,0.06);
@@ -327,6 +455,7 @@
     .table-header-bar { padding: 18px 20px; }
     .time-bar { padding: 16px 18px; }
     .subject-icon { display: none; }
+    .download-stat { min-width: 100px; padding: 14px 20px; }
   }
 </style>
 </head>
@@ -339,6 +468,7 @@
     <p class="subtitle">Class 12 · <span>Science Stream (Computer)</span></p>
   </div>
 
+  <!-- Stats row + DOWNLOAD BUTTON integrated as interactive stat -->
   <div class="stats">
     <div class="stat">
       <div class="stat-value">6</div>
@@ -355,6 +485,31 @@
     <div class="stat">
       <div class="stat-value">3 hrs</div>
       <div class="stat-label">Duration</div>
+    </div>
+    <!-- DOWNLOAD BUTTON: saves this page as an offline HTML file -->
+    <div class="stat download-stat" id="downloadBtn" title="Save this webpage for offline viewing">
+      <div class="download-icon">📥</div>
+      <div class="stat-label">Download Page</div>
+    </div>
+  </div>
+
+  <!-- COUNTDOWN TIMER SECTION - Next exam countdown (dynamic) -->
+  <div class="countdown-card" id="countdownCard">
+    <div class="countdown-inner" id="countdownInner">
+      <div class="countdown-info">
+        <div class="countdown-badge">
+          <span>⏳</span> COUNTDOWN TO NEXT EXAM
+        </div>
+        <div class="next-subject" id="nextExamSubject">—</div>
+        <div class="next-date" id="nextExamDate"></div>
+      </div>
+      <div class="timer-box" id="timerBox">
+        <div class="timer-digits" id="countdownTimer">--d --h --m --s</div>
+        <div class="timer-label">remaining until 8:00 AM (NPT)</div>
+      </div>
+    </div>
+    <div class="timezone-note">
+      🕒 Based on Nepal Time (GMT+5:45) · Exam starts sharp at 8:00 AM
     </div>
   </div>
 
@@ -465,5 +620,142 @@
   </div>
 
 </div>
+
+<script>
+  (function() {
+    // ---------- Exam list based on official schedule (AD dates, start 8:00 AM NPT) ----------
+    const exams = [
+      { subject: "Compulsory English", dateStr: "April 27, 2026", isoWithOffset: "2026-04-27T08:00:00+05:45" },
+      { subject: "Compulsory Nepali", dateStr: "April 28, 2026", isoWithOffset: "2026-04-28T08:00:00+05:45" },
+      { subject: "Compulsory Mathematics", dateStr: "April 30, 2026", isoWithOffset: "2026-04-30T08:00:00+05:45" },
+      { subject: "Physics", dateStr: "May 4, 2026", isoWithOffset: "2026-05-04T08:00:00+05:45" },
+      { subject: "Chemistry", dateStr: "May 6, 2026", isoWithOffset: "2026-05-06T08:00:00+05:45" },
+      { subject: "Computer Science", dateStr: "May 10, 2026", isoWithOffset: "2026-05-10T08:00:00+05:45" }
+    ];
+
+    // Helper: get next upcoming exam (target time > current time)
+    function getNextExam() {
+      const now = new Date(); // current moment in user's system (absolute)
+      let upcoming = null;
+      let smallestDiff = Infinity;
+
+      for (let exam of exams) {
+        const targetDate = new Date(exam.isoWithOffset);
+        if (isNaN(targetDate.getTime())) continue;
+        const diffMs = targetDate - now;
+        if (diffMs > 0 && diffMs < smallestDiff) {
+          smallestDiff = diffMs;
+          upcoming = exam;
+        }
+      }
+      return upcoming;
+    }
+
+    // format duration (ms) into days/hours/minutes/seconds
+    function formatCountdown(ms) {
+      if (ms <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0, totalValid: false };
+      const totalSeconds = Math.floor(ms / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+      return { days, hours, minutes, seconds, totalValid: true };
+    }
+
+    function getTimerDisplay(days, hours, minutes, seconds) {
+      return `${days}d ${hours.toString().padStart(2,'0')}h ${minutes.toString().padStart(2,'0')}m ${seconds.toString().padStart(2,'0')}s`;
+    }
+
+    function getWeekdayFromISO(isoString) {
+      const dateObj = new Date(isoString);
+      if (isNaN(dateObj.getTime())) return '';
+      return dateObj.toLocaleDateString('en-GB', { weekday: 'long' });
+    }
+
+    function updateCountdownUI() {
+      const nextExam = getNextExam();
+      const nextSubjectEl = document.getElementById('nextExamSubject');
+      const nextDateEl = document.getElementById('nextExamDate');
+      const timerDigitsEl = document.getElementById('countdownTimer');
+
+      if (!nextExam) {
+        nextSubjectEl.textContent = "✨ Exams Completed ✨";
+        nextDateEl.innerHTML = '<span style="color:#f59e0b;">All examinations have concluded. Best wishes for your future!</span>';
+        timerDigitsEl.textContent = "🎓  DONE  🎓";
+        return;
+      }
+
+      nextSubjectEl.textContent = nextExam.subject;
+      const targetDateTime = new Date(nextExam.isoWithOffset);
+      const examDayName = getWeekdayFromISO(nextExam.isoWithOffset);
+      const formattedDate = `${nextExam.dateStr} (${examDayName})`;
+      nextDateEl.innerHTML = `<strong>📅 ${formattedDate}</strong> <span style="font-size:12px;">• 8:00 AM sharp</span>`;
+
+      const now = new Date();
+      const targetTime = new Date(nextExam.isoWithOffset);
+      const diffMs = targetTime - now;
+
+      if (diffMs <= 0) {
+        timerDigitsEl.textContent = "⏳  STARTED  ⏳";
+        return;
+      }
+
+      const { days, hours, minutes, seconds, totalValid } = formatCountdown(diffMs);
+      if (totalValid) {
+        timerDigitsEl.textContent = getTimerDisplay(days, hours, minutes, seconds);
+      } else {
+        timerDigitsEl.textContent = "0d 00h 00m 00s";
+      }
+    }
+
+    // start countdown timer
+    let intervalId = null;
+    function startCountdownTimer() {
+      updateCountdownUI();
+      if (intervalId) clearInterval(intervalId);
+      intervalId = setInterval(() => {
+        updateCountdownUI();
+      }, 1000);
+    }
+    startCountdownTimer();
+
+    document.addEventListener('visibilitychange', function() {
+      if (!document.hidden) updateCountdownUI();
+    });
+
+    // ---------- OFFLINE DOWNLOAD FUNCTIONALITY ----------
+    const downloadButton = document.getElementById('downloadBtn');
+    if (downloadButton) {
+      downloadButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Build full HTML string including DOCTYPE and current DOM state.
+        // This captures the exact page as seen (including countdown values and styles)
+        const doctype = '<!DOCTYPE html>\n';
+        const fullHtml = doctype + document.documentElement.outerHTML;
+        
+        // Create blob and trigger download
+        const blob = new Blob([fullHtml], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const downloadLink = document.createElement('a');
+        downloadLink.href = url;
+        downloadLink.download = 'NEB_Class12_Exam_Routine_2083.html';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+        URL.revokeObjectURL(url);
+        
+        // optional subtle feedback
+        const originalText = downloadButton.querySelector('.stat-label')?.innerText;
+        const labelSpan = downloadButton.querySelector('.stat-label');
+        if (labelSpan) {
+          labelSpan.innerText = '✓ Saved!';
+          setTimeout(() => {
+            if (labelSpan) labelSpan.innerText = originalText || 'Download Page';
+          }, 1500);
+        }
+      });
+    }
+  })();
+</script>
 </body>
 </html>
