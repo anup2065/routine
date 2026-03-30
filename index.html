@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>NEB Class 12 Exam Routine 2083 — Downloadable</title>
+<title>NEB Class 12 Exam Routine 2083 — Silent Countdown</title>
 <style>
   :root {
     --bg: #0a0e1a;
@@ -15,7 +15,6 @@
     --text: #e2e8f0;
     --muted: #64748b;
     --row-hover: #1a2540;
-    --success: #10b981;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -61,14 +60,14 @@
     z-index: 1;
     max-width: 860px;
     margin: 0 auto;
-    padding: 60px 24px 80px;
+    padding: 40px 20px 60px;
   }
 
   /* Header */
   .header {
     text-align: center;
-    margin-bottom: 56px;
-    animation: fadeDown 0.8s ease both;
+    margin-bottom: 40px;
+    animation: fadeDown 0.6s ease both;
   }
 
   .badge {
@@ -76,32 +75,30 @@
     background: rgba(59,130,246,0.15);
     border: 1px solid rgba(59,130,246,0.35);
     color: var(--accent2);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    padding: 6px 18px;
+    padding: 5px 16px;
     border-radius: 100px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   h1 {
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: clamp(2.6rem, 7vw, 4.2rem);
+    font-size: clamp(2rem, 6vw, 3.6rem);
     font-weight: 900;
     line-height: 1.1;
     background: linear-gradient(135deg, #ffffff 0%, #93c5fd 60%, #3b82f6 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 16px;
+    color: transparent;
+    margin-bottom: 12px;
   }
 
   .subtitle {
-    font-size: 1.15rem;
+    font-size: 1rem;
     color: var(--muted);
-    font-weight: 300;
-    letter-spacing: 0.02em;
   }
 
   .subtitle span {
@@ -112,189 +109,166 @@
   /* Stats row */
   .stats {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 32px;
-    animation: fadeUp 0.8s 0.2s ease both;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s 0.1s ease both;
   }
 
   .stat {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 18px 28px;
+    padding: 12px 18px;
     text-align: center;
-    min-width: 130px;
-    transition: all 0.2s;
+    min-width: 100px;
+    flex: 1 0 auto;
   }
 
   .stat-value {
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--accent2);
     line-height: 1;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
   .stat-label {
-    font-size: 12px;
+    font-size: 10px;
     color: var(--muted);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
   }
 
-  /* Download stat (special interactive) */
   .download-stat {
     cursor: pointer;
     background: linear-gradient(145deg, rgba(59,130,246,0.12), rgba(17,24,39,0.9));
     border-color: rgba(59,130,246,0.5);
     transition: all 0.2s ease;
   }
-  .download-stat:hover {
-    background: rgba(59,130,246,0.2);
-    transform: translateY(-3px);
-    border-color: var(--accent2);
-    box-shadow: 0 10px 18px -8px rgba(59,130,246,0.3);
-  }
   .download-stat:active {
-    transform: translateY(1px);
-  }
-  .download-icon {
-    font-size: 1.7rem;
-    margin-bottom: 6px;
+    transform: scale(0.97);
   }
 
-  /* COUNTDOWN CARD */
+  /* Countdown Card */
   .countdown-card {
     background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(17, 24, 39, 0.98));
     border: 1px solid rgba(59,130,246,0.35);
-    border-radius: 24px;
-    margin-bottom: 32px;
+    border-radius: 20px;
+    margin-bottom: 28px;
     backdrop-filter: blur(2px);
-    animation: fadeUp 0.8s 0.28s ease both;
-    box-shadow: 0 12px 35px -15px rgba(0,0,0,0.5), 0 0 0 1px rgba(59,130,246,0.1);
+    animation: fadeUp 0.6s 0.2s ease both;
   }
 
   .countdown-inner {
-    padding: 22px 28px;
+    padding: 18px 20px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 16px;
   }
 
   .countdown-info {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+    flex: 2;
+    min-width: 160px;
   }
 
   .countdown-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     background: rgba(245,158,11,0.12);
     border: 1px solid rgba(245,158,11,0.3);
-    padding: 5px 12px;
+    padding: 4px 10px;
     border-radius: 100px;
-    width: fit-content;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
-    letter-spacing: 0.08em;
     color: var(--gold);
     text-transform: uppercase;
+    margin-bottom: 8px;
   }
 
   .next-subject {
-    font-size: 1.55rem;
+    font-size: 1.3rem;
     font-weight: 700;
     background: linear-gradient(115deg, #fff, #93c5fd);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     line-height: 1.2;
+    margin-bottom: 4px;
   }
 
   .next-date {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
   }
 
   .next-date strong {
     color: var(--accent2);
-    font-weight: 500;
   }
 
   .timer-box {
     background: #0a0f1c;
-    border-radius: 32px;
-    padding: 12px 24px;
+    border-radius: 28px;
+    padding: 10px 20px;
     border: 1px solid var(--border);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
     text-align: center;
-    min-width: 240px;
+    min-width: 200px;
   }
 
   .timer-digits {
-    font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
-    font-size: 2rem;
+    font-family: monospace;
+    font-size: 1.5rem;
     font-weight: 800;
-    letter-spacing: 3px;
-    color: var(--gold);
+    letter-spacing: 2px;
     background: linear-gradient(145deg, #fbbf24, #f59e0b);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 0 0 8px rgba(245,158,11,0.2);
   }
 
   .timer-label {
-    font-size: 11px;
+    font-size: 9px;
     text-transform: uppercase;
     color: var(--muted);
-    letter-spacing: 0.1em;
-    margin-top: 6px;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
   }
 
   .timezone-note {
-    font-size: 10px;
+    font-size: 9px;
     color: #475569;
     text-align: right;
     border-top: 1px solid rgba(59,130,246,0.2);
-    padding: 8px 28px 12px;
-    background: rgba(0,0,0,0.2);
-    border-radius: 0 0 24px 24px;
+    padding: 6px 20px 10px;
   }
 
-  /* Table card */
+  /* Table Card - Fully Responsive */
   .table-card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 20px;
-    overflow: hidden;
-    animation: fadeUp 0.8s 0.35s ease both;
-    box-shadow: 0 0 60px rgba(59,130,246,0.07);
+    overflow-x: auto;
+    animation: fadeUp 0.6s 0.3s ease both;
   }
 
   .table-header-bar {
     background: linear-gradient(135deg, rgba(59,130,246,0.18), rgba(96,165,250,0.08));
     border-bottom: 1px solid var(--border);
-    padding: 22px 36px;
+    padding: 16px 20px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    flex-wrap: wrap;
   }
 
   .table-header-bar h2 {
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: white;
   }
@@ -303,11 +277,8 @@
     background: rgba(245,158,11,0.15);
     border: 1px solid rgba(245,158,11,0.35);
     color: var(--gold);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 4px 12px;
+    font-size: 10px;
+    padding: 3px 10px;
     border-radius: 100px;
     margin-left: auto;
   }
@@ -315,14 +286,15 @@
   table {
     width: 100%;
     border-collapse: collapse;
+    min-width: 280px;
   }
 
   thead th {
-    padding: 18px 36px;
+    padding: 14px 16px;
     text-align: left;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
     border-bottom: 1px solid var(--border);
@@ -330,44 +302,36 @@
 
   tbody tr {
     border-bottom: 1px solid rgba(30,45,71,0.7);
-    transition: background 0.2s ease;
-    animation: rowIn 0.5s ease both;
+    transition: background 0.2s;
   }
 
   tbody tr:last-child { border-bottom: none; }
-
   tbody tr:hover { background: var(--row-hover); }
 
-  tbody tr:nth-child(1) { animation-delay: 0.45s; }
-  tbody tr:nth-child(2) { animation-delay: 0.52s; }
-  tbody tr:nth-child(3) { animation-delay: 0.59s; }
-  tbody tr:nth-child(4) { animation-delay: 0.66s; }
-  tbody tr:nth-child(5) { animation-delay: 0.73s; }
-  tbody tr:nth-child(6) { animation-delay: 0.80s; }
-
   td {
-    padding: 22px 36px;
+    padding: 14px 16px;
     vertical-align: middle;
   }
 
   .date-bs {
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: var(--text);
-    white-space: nowrap;
+    white-space: normal;
+    word-break: break-word;
   }
 
   .date-ad {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: var(--muted);
-    margin-top: 3px;
+    margin-top: 2px;
   }
 
   .day-pill {
     display: inline-block;
-    padding: 5px 14px;
+    padding: 4px 12px;
     border-radius: 100px;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 500;
     background: rgba(59,130,246,0.1);
     border: 1px solid rgba(59,130,246,0.25);
@@ -375,87 +339,79 @@
     white-space: nowrap;
   }
 
-  .subject-name {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: white;
-  }
-
-  .subject-icon {
-    display: inline-block;
-    width: 34px;
-    height: 34px;
-    border-radius: 10px;
-    text-align: center;
-    line-height: 34px;
-    font-size: 17px;
-    margin-right: 12px;
-    vertical-align: middle;
-    flex-shrink: 0;
-  }
-
   .subject-cell {
     display: flex;
     align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .subject-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .subject-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: white;
+    word-break: break-word;
   }
 
   .time-bar {
     border-top: 1px solid var(--border);
-    padding: 20px 36px;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
+    flex-wrap: wrap;
     background: rgba(245,158,11,0.04);
   }
 
   .time-bar span {
-    font-size: 0.95rem;
-    color: var(--gold);
-    font-weight: 500;
-  }
-
-  .time-bar .label {
     font-size: 0.85rem;
-    color: var(--muted);
-    font-weight: 400;
+    color: var(--gold);
   }
 
   .note {
-    margin-top: 32px;
+    margin-top: 28px;
     background: rgba(59,130,246,0.06);
     border: 1px solid rgba(59,130,246,0.18);
     border-radius: 14px;
-    padding: 20px 28px;
-    font-size: 0.9rem;
+    padding: 16px 20px;
+    font-size: 0.85rem;
     color: var(--muted);
-    line-height: 1.7;
-    animation: fadeUp 0.8s 0.9s ease both;
+    line-height: 1.5;
   }
-
-  .note strong { color: var(--accent2); }
 
   /* Animations */
   @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-28px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
-
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes rowIn {
-    from { opacity: 0; transform: translateX(-12px); }
-    to   { opacity: 1; transform: translateX(0); }
-  }
-
-  @media (max-width: 600px) {
-    thead th, td { padding: 16px 18px; }
-    .table-header-bar { padding: 18px 20px; }
-    .time-bar { padding: 16px 18px; }
-    .subject-icon { display: none; }
-    .download-stat { min-width: 100px; padding: 14px 20px; }
+  /* Extra small devices */
+  @media (max-width: 550px) {
+    .container { padding: 24px 16px 40px; }
+    .stats { gap: 8px; }
+    .stat { padding: 8px 12px; min-width: 70px; }
+    .stat-value { font-size: 1.2rem; }
+    .countdown-inner { flex-direction: column; align-items: stretch; }
+    .timer-box { text-align: center; }
+    .subject-cell { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .subject-icon { margin-bottom: 2px; }
+    td, th { padding: 12px 12px; }
+    .day-pill { white-space: normal; }
   }
 </style>
 </head>
@@ -468,162 +424,64 @@
     <p class="subtitle">Class 12 · <span>Science Stream (Computer)</span></p>
   </div>
 
-  <!-- Stats row + DOWNLOAD BUTTON integrated as interactive stat -->
   <div class="stats">
-    <div class="stat">
-      <div class="stat-value">6</div>
-      <div class="stat-label">Subjects</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">14 days</div>
-      <div class="stat-label">Exam Period</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">8 AM</div>
-      <div class="stat-label">Start Time</div>
-    </div>
-    <div class="stat">
-      <div class="stat-value">3 hrs</div>
-      <div class="stat-label">Duration</div>
-    </div>
-    <!-- DOWNLOAD BUTTON: saves this page as an offline HTML file -->
-    <div class="stat download-stat" id="downloadBtn" title="Save this webpage for offline viewing">
-      <div class="download-icon">📥</div>
-      <div class="stat-label">Download Page</div>
-    </div>
+    <div class="stat"><div class="stat-value">6</div><div class="stat-label">Subjects</div></div>
+    <div class="stat"><div class="stat-value">14 days</div><div class="stat-label">Exam Period</div></div>
+    <div class="stat"><div class="stat-value">8 AM</div><div class="stat-label">Start Time</div></div>
+    <div class="stat"><div class="stat-value">3 hrs</div><div class="stat-label">Duration</div></div>
+    <div class="stat download-stat" id="downloadBtn"><div class="stat-value">📥</div><div class="stat-label">Download</div></div>
   </div>
 
-  <!-- COUNTDOWN TIMER SECTION - Next exam countdown (dynamic) -->
-  <div class="countdown-card" id="countdownCard">
-    <div class="countdown-inner" id="countdownInner">
+  <!-- Silent Countdown Card -->
+  <div class="countdown-card">
+    <div class="countdown-inner">
       <div class="countdown-info">
-        <div class="countdown-badge">
-          <span>⏳</span> COUNTDOWN TO NEXT EXAM
-        </div>
+        <div class="countdown-badge"><span>⏳</span> COUNTDOWN TO NEXT EXAM</div>
         <div class="next-subject" id="nextExamSubject">—</div>
         <div class="next-date" id="nextExamDate"></div>
       </div>
-      <div class="timer-box" id="timerBox">
+      <div class="timer-box">
         <div class="timer-digits" id="countdownTimer">--d --h --m --s</div>
         <div class="timer-label">remaining until 8:00 AM (NPT)</div>
       </div>
     </div>
-    <div class="timezone-note">
-      🕒 Based on Nepal Time (GMT+5:45) · Exam starts sharp at 8:00 AM
-    </div>
+    <div class="timezone-note">🕒 Nepal Time (GMT+5:45) · Exam starts sharp at 8:00 AM</div>
   </div>
 
+  <!-- Exam Schedule Table -->
   <div class="table-card">
     <div class="table-header-bar">
       <h2>Exam Schedule</h2>
       <div class="stream-tag">Science · Computer</div>
     </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Day</th>
-          <th>Subject</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="date-bs">Baisakh 14, 2083</div>
-            <div class="date-ad">April 27, 2026</div>
-          </td>
-          <td><span class="day-pill">Monday</span></td>
-          <td>
-            <div class="subject-cell">
-              <span class="subject-icon" style="background:rgba(59,130,246,0.15)">📝</span>
-              <span class="subject-name">Compulsory English</span>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="date-bs">Baisakh 15, 2083</div>
-            <div class="date-ad">April 28, 2026</div>
-          </td>
-          <td><span class="day-pill">Tuesday</span></td>
-          <td>
-            <div class="subject-cell">
-              <span class="subject-icon" style="background:rgba(168,85,247,0.15)">🇳🇵</span>
-              <span class="subject-name">Compulsory Nepali</span>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="date-bs">Baisakh 17, 2083</div>
-            <div class="date-ad">April 30, 2026</div>
-          </td>
-          <td><span class="day-pill">Thursday</span></td>
-          <td>
-            <div class="subject-cell">
-              <span class="subject-icon" style="background:rgba(245,158,11,0.15)">➗</span>
-              <span class="subject-name">Compulsory Mathematics</span>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="date-bs">Baisakh 21, 2083</div>
-            <div class="date-ad">May 4, 2026</div>
-          </td>
-          <td><span class="day-pill">Monday</span></td>
-          <td>
-            <div class="subject-cell">
-              <span class="subject-icon" style="background:rgba(6,182,212,0.15)">⚡</span>
-              <span class="subject-name">Physics</span>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="date-bs">Baisakh 23, 2083</div>
-            <div class="date-ad">May 6, 2026</div>
-          </td>
-          <td><span class="day-pill">Wednesday</span></td>
-          <td>
-            <div class="subject-cell">
-              <span class="subject-icon" style="background:rgba(16,185,129,0.15)">🧪</span>
-              <span class="subject-name">Chemistry</span>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="date-bs">Baisakh 27, 2083</div>
-            <div class="date-ad">May 10, 2026</div>
-          </td>
-          <td><span class="day-pill">Sunday</span></td>
-          <td>
-            <div class="subject-cell">
-              <span class="subject-icon" style="background:rgba(239,68,68,0.15)">💻</span>
-              <span class="subject-name">Computer Science</span>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="time-bar">
-      <span>🕗 8:00 AM – 11:00 AM</span>
-      <span class="label">· All exam papers are 3 hours in duration</span>
+    <div style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Day</th><th>Subject</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><div class="date-bs">Baisakh 14, 2083</div><div class="date-ad">April 27, 2026</div></td><td><span class="day-pill">Monday</span></td><td><div class="subject-cell"><span class="subject-icon" style="background:rgba(59,130,246,0.15)">📝</span><span class="subject-name">Compulsory English</span></div></td></tr>
+          <tr><td><div class="date-bs">Baisakh 15, 2083</div><div class="date-ad">April 28, 2026</div></td><td><span class="day-pill">Tuesday</span></td><td><div class="subject-cell"><span class="subject-icon" style="background:rgba(168,85,247,0.15)">🇳🇵</span><span class="subject-name">Compulsory Nepali</span></div></td></tr>
+          <tr><td><div class="date-bs">Baisakh 17, 2083</div><div class="date-ad">April 30, 2026</div></td><td><span class="day-pill">Thursday</span></td><td><div class="subject-cell"><span class="subject-icon" style="background:rgba(245,158,11,0.15)">➗</span><span class="subject-name">Compulsory Mathematics</span></div></td></tr>
+          <tr><td><div class="date-bs">Baisakh 21, 2083</div><div class="date-ad">May 4, 2026</div></td><td><span class="day-pill">Monday</span></td><td><div class="subject-cell"><span class="subject-icon" style="background:rgba(6,182,212,0.15)">⚡</span><span class="subject-name">Physics</span></div></td></tr>
+          <tr><td><div class="date-bs">Baisakh 23, 2083</div><div class="date-ad">May 6, 2026</div></td><td><span class="day-pill">Wednesday</span></td><td><div class="subject-cell"><span class="subject-icon" style="background:rgba(16,185,129,0.15)">🧪</span><span class="subject-name">Chemistry</span></div></td></tr>
+          <tr><td><div class="date-bs">Baisakh 27, 2083</div><div class="date-ad">May 10, 2026</div></td><td><span class="day-pill">Sunday</span></td><td><div class="subject-cell"><span class="subject-icon" style="background:rgba(239,68,68,0.15)">💻</span><span class="subject-name">Computer Science</span></div></td></tr>
+        </tbody>
+      </table>
     </div>
+    <div class="time-bar"><span>🕗 8:00 AM – 11:00 AM</span><span class="label">· 3 hours duration</span></div>
   </div>
 
-  <div class="note">
-    <strong>Reminder:</strong> Arrive at least <strong>30 minutes early</strong>. Mobile phones and smartwatches are strictly prohibited. Bring required materials (log tables, graph paper, etc.) on your own.
-  </div>
-
+  <div class="note"><strong>Reminder:</strong> Arrive at least <strong>30 minutes early</strong>. Mobile phones and smartwatches are strictly prohibited. Bring required materials on your own.</div>
 </div>
 
 <script>
   (function() {
-    // ---------- Exam list based on official schedule (AD dates, start 8:00 AM NPT) ----------
+    // 🔇🔇🔇 CRITICAL SAFETY CONFIRMATION 🔇🔇🔇
+    // This timer is 100% SILENT. No audio APIs, no notifications, no vibrations.
+    // If the page is closed, EVERYTHING STOPS. No background processes.
+    // The only function: update text on screen. That's it.
+
     const exams = [
       { subject: "Compulsory English", dateStr: "April 27, 2026", isoWithOffset: "2026-04-27T08:00:00+05:45" },
       { subject: "Compulsory Nepali", dateStr: "April 28, 2026", isoWithOffset: "2026-04-28T08:00:00+05:45" },
@@ -633,125 +491,86 @@
       { subject: "Computer Science", dateStr: "May 10, 2026", isoWithOffset: "2026-05-10T08:00:00+05:45" }
     ];
 
-    // Helper: get next upcoming exam (target time > current time)
     function getNextExam() {
-      const now = new Date(); // current moment in user's system (absolute)
+      const now = new Date();
       let upcoming = null;
-      let smallestDiff = Infinity;
-
+      let smallest = Infinity;
       for (let exam of exams) {
-        const targetDate = new Date(exam.isoWithOffset);
-        if (isNaN(targetDate.getTime())) continue;
-        const diffMs = targetDate - now;
-        if (diffMs > 0 && diffMs < smallestDiff) {
-          smallestDiff = diffMs;
+        const target = new Date(exam.isoWithOffset);
+        if (isNaN(target)) continue;
+        const diff = target - now;
+        if (diff > 0 && diff < smallest) {
+          smallest = diff;
           upcoming = exam;
         }
       }
       return upcoming;
     }
 
-    // format duration (ms) into days/hours/minutes/seconds
     function formatCountdown(ms) {
-      if (ms <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0, totalValid: false };
-      const totalSeconds = Math.floor(ms / 1000);
-      const days = Math.floor(totalSeconds / 86400);
-      const hours = Math.floor((totalSeconds % 86400) / 3600);
-      const minutes = Math.floor((totalSeconds % 3600) / 60);
-      const seconds = totalSeconds % 60;
-      return { days, hours, minutes, seconds, totalValid: true };
+      if (ms <= 0) return null;
+      const totalSec = Math.floor(ms / 1000);
+      const days = Math.floor(totalSec / 86400);
+      const hours = Math.floor((totalSec % 86400) / 3600);
+      const minutes = Math.floor((totalSec % 3600) / 60);
+      const seconds = totalSec % 60;
+      return { days, hours, minutes, seconds };
     }
 
-    function getTimerDisplay(days, hours, minutes, seconds) {
-      return `${days}d ${hours.toString().padStart(2,'0')}h ${minutes.toString().padStart(2,'0')}m ${seconds.toString().padStart(2,'0')}s`;
-    }
+    function updateUI() {
+      const next = getNextExam();
+      const subjectEl = document.getElementById('nextExamSubject');
+      const dateEl = document.getElementById('nextExamDate');
+      const timerEl = document.getElementById('countdownTimer');
 
-    function getWeekdayFromISO(isoString) {
-      const dateObj = new Date(isoString);
-      if (isNaN(dateObj.getTime())) return '';
-      return dateObj.toLocaleDateString('en-GB', { weekday: 'long' });
-    }
-
-    function updateCountdownUI() {
-      const nextExam = getNextExam();
-      const nextSubjectEl = document.getElementById('nextExamSubject');
-      const nextDateEl = document.getElementById('nextExamDate');
-      const timerDigitsEl = document.getElementById('countdownTimer');
-
-      if (!nextExam) {
-        nextSubjectEl.textContent = "✨ Exams Completed ✨";
-        nextDateEl.innerHTML = '<span style="color:#f59e0b;">All examinations have concluded. Best wishes for your future!</span>';
-        timerDigitsEl.textContent = "🎓  DONE  🎓";
+      if (!next) {
+        subjectEl.textContent = "✨ Exams Completed ✨";
+        dateEl.innerHTML = '<span style="color:#f59e0b;">All examinations concluded. Best wishes!</span>';
+        timerEl.textContent = "🎓 DONE 🎓";
         return;
       }
 
-      nextSubjectEl.textContent = nextExam.subject;
-      const targetDateTime = new Date(nextExam.isoWithOffset);
-      const examDayName = getWeekdayFromISO(nextExam.isoWithOffset);
-      const formattedDate = `${nextExam.dateStr} (${examDayName})`;
-      nextDateEl.innerHTML = `<strong>📅 ${formattedDate}</strong> <span style="font-size:12px;">• 8:00 AM sharp</span>`;
+      subjectEl.textContent = next.subject;
+      const targetDate = new Date(next.isoWithOffset);
+      const weekday = targetDate.toLocaleDateString('en-GB', { weekday: 'long' });
+      dateEl.innerHTML = `<strong>📅 ${next.dateStr} (${weekday})</strong> <span style="font-size:11px;">• 8:00 AM sharp</span>`;
 
-      const now = new Date();
-      const targetTime = new Date(nextExam.isoWithOffset);
-      const diffMs = targetTime - now;
-
-      if (diffMs <= 0) {
-        timerDigitsEl.textContent = "⏳  STARTED  ⏳";
+      const diff = targetDate - new Date();
+      if (diff <= 0) {
+        timerEl.textContent = "⏳ STARTED ⏳";
         return;
       }
-
-      const { days, hours, minutes, seconds, totalValid } = formatCountdown(diffMs);
-      if (totalValid) {
-        timerDigitsEl.textContent = getTimerDisplay(days, hours, minutes, seconds);
+      const cd = formatCountdown(diff);
+      if (cd) {
+        timerEl.textContent = `${cd.days}d ${cd.hours.toString().padStart(2,'0')}h ${cd.minutes.toString().padStart(2,'0')}m ${cd.seconds.toString().padStart(2,'0')}s`;
       } else {
-        timerDigitsEl.textContent = "0d 00h 00m 00s";
+        timerEl.textContent = "0d 00h 00m 00s";
       }
     }
 
-    // start countdown timer
-    let intervalId = null;
-    function startCountdownTimer() {
-      updateCountdownUI();
-      if (intervalId) clearInterval(intervalId);
-      intervalId = setInterval(() => {
-        updateCountdownUI();
-      }, 1000);
-    }
-    startCountdownTimer();
+    updateUI();
+    const interval = setInterval(updateUI, 1000);
+    // No audio, no notifications, no alerts.
 
-    document.addEventListener('visibilitychange', function() {
-      if (!document.hidden) updateCountdownUI();
-    });
-
-    // ---------- OFFLINE DOWNLOAD FUNCTIONALITY ----------
-    const downloadButton = document.getElementById('downloadBtn');
-    if (downloadButton) {
-      downloadButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        // Build full HTML string including DOCTYPE and current DOM state.
-        // This captures the exact page as seen (including countdown values and styles)
-        const doctype = '<!DOCTYPE html>\n';
-        const fullHtml = doctype + document.documentElement.outerHTML;
-        
-        // Create blob and trigger download
-        const blob = new Blob([fullHtml], { type: 'text/html' });
+    // Download button
+    const downloadBtn = document.getElementById('downloadBtn');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', () => {
+        const html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+        const blob = new Blob([html], { type: 'text/html' });
         const url = URL.createObjectURL(blob);
-        const downloadLink = document.createElement('a');
-        downloadLink.href = url;
-        downloadLink.download = 'NEB_Class12_Exam_Routine_2083.html';
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'NEB_Class12_Exam_Routine_2083.html';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
         URL.revokeObjectURL(url);
-        
-        // optional subtle feedback
-        const originalText = downloadButton.querySelector('.stat-label')?.innerText;
-        const labelSpan = downloadButton.querySelector('.stat-label');
-        if (labelSpan) {
-          labelSpan.innerText = '✓ Saved!';
-          setTimeout(() => {
-            if (labelSpan) labelSpan.innerText = originalText || 'Download Page';
-          }, 1500);
+        const label = downloadBtn.querySelector('.stat-label');
+        if (label) {
+          const original = label.innerText;
+          label.innerText = '✓ Saved!';
+          setTimeout(() => { if (label) label.innerText = original; }, 1500);
         }
       });
     }
