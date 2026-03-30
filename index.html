@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>NEB Class 12 Exam Routine 2083 — Silent Countdown</title>
+<title>NEB Class 12 Exam Routine 2083 — Offline Timer</title>
 <style>
   :root {
     --bg: #0a0e1a;
@@ -28,7 +28,6 @@
     position: relative;
   }
 
-  /* Background grid */
   body::before {
     content: '';
     position: fixed;
@@ -41,7 +40,6 @@
     z-index: 0;
   }
 
-  /* Radial glow */
   body::after {
     content: '';
     position: fixed;
@@ -63,7 +61,6 @@
     padding: 40px 20px 60px;
   }
 
-  /* Header */
   .header {
     text-align: center;
     margin-bottom: 40px;
@@ -106,7 +103,6 @@
     font-weight: 500;
   }
 
-  /* Stats row */
   .stats {
     display: flex;
     gap: 12px;
@@ -148,11 +144,8 @@
     border-color: rgba(59,130,246,0.5);
     transition: all 0.2s ease;
   }
-  .download-stat:active {
-    transform: scale(0.97);
-  }
+  .download-stat:active { transform: scale(0.97); }
 
-  /* Countdown Card */
   .countdown-card {
     background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(17, 24, 39, 0.98));
     border: 1px solid rgba(59,130,246,0.35);
@@ -206,10 +199,7 @@
     font-size: 0.8rem;
     color: var(--muted);
   }
-
-  .next-date strong {
-    color: var(--accent2);
-  }
+  .next-date strong { color: var(--accent2); }
 
   .timer-box {
     background: #0a0f1c;
@@ -247,7 +237,6 @@
     padding: 6px 20px 10px;
   }
 
-  /* Table Card - Fully Responsive */
   .table-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -304,7 +293,6 @@
     border-bottom: 1px solid rgba(30,45,71,0.7);
     transition: background 0.2s;
   }
-
   tbody tr:last-child { border-bottom: none; }
   tbody tr:hover { background: var(--row-hover); }
 
@@ -320,7 +308,6 @@
     white-space: normal;
     word-break: break-word;
   }
-
   .date-ad {
     font-size: 0.7rem;
     color: var(--muted);
@@ -345,7 +332,6 @@
     gap: 10px;
     flex-wrap: wrap;
   }
-
   .subject-icon {
     width: 32px;
     height: 32px;
@@ -356,7 +342,6 @@
     font-size: 16px;
     flex-shrink: 0;
   }
-
   .subject-name {
     font-size: 0.95rem;
     font-weight: 500;
@@ -373,7 +358,6 @@
     flex-wrap: wrap;
     background: rgba(245,158,11,0.04);
   }
-
   .time-bar span {
     font-size: 0.85rem;
     color: var(--gold);
@@ -390,7 +374,17 @@
     line-height: 1.5;
   }
 
-  /* Animations */
+  .offline-info {
+    margin-top: 20px;
+    background: rgba(16,185,129,0.1);
+    border: 1px solid rgba(16,185,129,0.3);
+    border-radius: 14px;
+    padding: 12px 18px;
+    font-size: 0.8rem;
+    color: #9ca3af;
+    text-align: center;
+  }
+
   @keyframes fadeDown {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -400,7 +394,6 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Extra small devices */
   @media (max-width: 550px) {
     .container { padding: 24px 16px 40px; }
     .stats { gap: 8px; }
@@ -472,15 +465,20 @@
     <div class="time-bar"><span>🕗 8:00 AM – 11:00 AM</span><span class="label">· 3 hours duration</span></div>
   </div>
 
-  <div class="note"><strong>Reminder:</strong> Arrive at least <strong>30 minutes early</strong>. Mobile phones and smartwatches are strictly prohibited. Bring required materials on your own.</div>
+  <div class="note">
+    <strong>Reminder:</strong> Arrive at least <strong>30 minutes early</strong>. Mobile phones and smartwatches are strictly prohibited. Bring required materials on your own.
+  </div>
+
+  <div class="offline-info">
+    📱 <strong>Use offline & add to home screen:</strong><br>
+    Tap <strong>Download</strong> above → save the file. Then open it in your browser, tap the menu (⋮) and choose <strong>Add to Home Screen</strong>. The saved page works completely offline — no internet needed after download.
+  </div>
 </div>
 
 <script>
   (function() {
-    // 🔇🔇🔇 CRITICAL SAFETY CONFIRMATION 🔇🔇🔇
-    // This timer is 100% SILENT. No audio APIs, no notifications, no vibrations.
-    // If the page is closed, EVERYTHING STOPS. No background processes.
-    // The only function: update text on screen. That's it.
+    // 🔇🔇🔇 ABSOLUTELY SILENT 🔇🔇🔇
+    // No audio, no notifications, no alerts. The timer only updates text.
 
     const exams = [
       { subject: "Compulsory English", dateStr: "April 27, 2026", isoWithOffset: "2026-04-27T08:00:00+05:45" },
@@ -549,10 +547,9 @@
     }
 
     updateUI();
-    const interval = setInterval(updateUI, 1000);
-    // No audio, no notifications, no alerts.
+    setInterval(updateUI, 1000);
 
-    // Download button
+    // Download button – saves the whole page as a standalone HTML file
     const downloadBtn = document.getElementById('downloadBtn');
     if (downloadBtn) {
       downloadBtn.addEventListener('click', () => {
